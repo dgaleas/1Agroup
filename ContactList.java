@@ -7,7 +7,7 @@ Oneobject of this class represents a list contacts
  *
  */
 public class ContactList {
-	
+java.io.Serializable;	
  private Contact[] list;
 
 /**
