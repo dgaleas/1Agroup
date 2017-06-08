@@ -5,8 +5,8 @@
  * @author Donaldo
  */
 import java.io.Serializable;
-import java.ioException;
- import java.util.Scanner;
+import java.util.Scanner;
+ import java.io.IOException;
 public class TestclassContactlist {
 
 	public static void main(String[] args) {

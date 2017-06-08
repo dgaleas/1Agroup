@@ -1,20 +1,28 @@
+import java.io.Serializable;
 /**
-Oneobject of this class represents a list contacts 
+One object of this class represents a list contacts 
  * This class will modify, print, store, and open a contact list
  * including first name, Last name, street address,
  * email, phone number, and notes on contact
  * @author Donaldo
  *
  */
-public class ContactList {
-java.io.Serializable;	
+
+public class ContactList implements Comparable <Contact>{
+	 	
  private Contact[] list;
+ 
+ public int compareTo(Contact o){
+	return 0;
+	 
+ }
 
 /**
  * This will show the contact asked for
+ * @return 
  * @return
  */
-public String   Showcontact(){
+public    String Showcontact(){
 	return "";
 }//End of Showcontact
 /**THis Method will return 
@@ -39,5 +47,7 @@ public void save(){
 
 public void open(){
 	
-}//End open
+}//End of open
+
+
 }//End of class

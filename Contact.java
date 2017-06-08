@@ -1,3 +1,5 @@
+
+
 /**
  * This class will create an object containing info
  * on ONE person, including first name, last name,
@@ -5,7 +7,7 @@
  * @author Donaldo
  *
  */
-public class Contact {
+public class Contact implements Serializable {
 	private String firstname;
 	private String lastname;
 	private String streetaddress;
@@ -16,7 +18,8 @@ public class Contact {
 	 * This will read input from user and create an object 
 	 * containing contact info
 	 */
-	private void Readinput(){
+	
+	public void Readinput(){
 		
 	}
 
