@@ -1,4 +1,4 @@
-import java.io.Serializable;
+
 
 /**
  * This class will create an object containing info
