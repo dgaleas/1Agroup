@@ -1,3 +1,4 @@
+
 /**
  * This class will read input to act on creating,
  * modifying, printing, saving and starting
@@ -6,12 +7,13 @@
  */
 import java.io.Serializable;
 import java.util.Scanner;
- import java.io.IOException;
+import java.io.IOException;
+
 public class TestclassContactlist {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-	}//End Main
+	}// End Main
 
-}//End class
+}// End class
