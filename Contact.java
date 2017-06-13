@@ -1,6 +1,6 @@
 
 /**
- *An object of this class is a contact containing info on ONE person, including
+ * An object of this class is a contact containing info on ONE person, including
  * first name, last name, street address, phone number, and notes
  * 
  * @author Donaldo
@@ -16,8 +16,9 @@ public class Contact implements Comparable<Contact> {
 
 	/**
 	 * This will read input from user and create an object containing contact
-	 * info. This will include a first name, last name, street address,
-	 * email, phone number, and notes about the person.
+	 * info. This will include a first name, last name, street address, email,
+	 * phone number, and notes about the person.
+	 * 
 	 * @return
 	 */
 
