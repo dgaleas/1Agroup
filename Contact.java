@@ -29,7 +29,7 @@ public class Contact implements Comparable<Contact> {
 	 * THis method will return the object of this class as a string
 	 */
 	public String toString() {
-		return "tosString() works";
+		return "toString() works";
 
 	}// End of toString
 
