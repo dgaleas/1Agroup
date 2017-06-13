@@ -1,6 +1,6 @@
 
 /**
- * This class will create an object containing info on ONE person, including
+ *An object of this class is a contact containing info on ONE person, including
  * first name, last name, street address, phone number, and notes
  * 
  * @author Donaldo
@@ -16,8 +16,8 @@ public class Contact implements Comparable<Contact> {
 
 	/**
 	 * This will read input from user and create an object containing contact
-	 * info
-	 * 
+	 * info. This will include a first name, last name, street address,
+	 * email, phone number, and notes about the person.
 	 * @return
 	 */
 
@@ -26,7 +26,7 @@ public class Contact implements Comparable<Contact> {
 	}// End readinput
 
 	/**
-	 * THis method will return the object of this class as a string
+	 * This method will return the object of this class as a string.
 	 */
 	public String toString() {
 		return "toString() works";
@@ -35,7 +35,7 @@ public class Contact implements Comparable<Contact> {
 
 	/**
 	 * This method will compare the object contact to another that is received
-	 * from the user
+	 * from the user.
 	 */
 
 	public int compareTo(Contact o) {
