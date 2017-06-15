@@ -21,7 +21,7 @@ public class TestclassContactlist {
 		System.out.println(Jonathan.toString());
 		ContactList list = new ContactList();
 		System.out.println(list.checkname());
-		System.out.println(list.showcontactlist());
+	
 		list.save();
 		list.open();
 		System.out.println(list.toString());

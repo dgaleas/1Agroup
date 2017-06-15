@@ -2,7 +2,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * One object of this class represents a list contacts This class will modify,
+ * One object of this class represents a list contacts. This class will modify,
  * print, store, and open a contact list including first name, Last name, street
  * address, email, phone number, and notes on contact.
  * 
@@ -15,12 +15,10 @@ public class ContactList {
 
 	/**
 	 * This will print entire list of contacts to console.
-	 * 
-	 * @return
 	 */
-	public String showcontactlist() {
-		return "showcontactlist() works";
-	}// End of Showcontact
+	public void showcontactlist() {
+		System.out.println("2");
+	}// End of Showcontactlist
 
 	/**
 	 * This Method will return all contacts that match the last name inputed by
