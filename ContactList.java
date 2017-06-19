@@ -1,25 +1,28 @@
-import java.io.Serializable;
-import java.util.ArrayList;
 
 /**
  * One object of this class represents a list contacts This class will modify,
  * print, store, and open a contact list including first name, Last name, street
  * address, email, phone number, and notes on contact.
  * 
- * @author Donaldo
- *
  */
+import java.util.ArrayList;
 
 public class ContactList {
 	public ArrayList<Contact> allcontacts = new ArrayList<Contact>();
+
+	public void addContact(Contact con) {
+		allcontacts.add(con);
+	}// end addcontact
 
 	/**
 	 * This will print entire list of contacts to console.
 	 * 
 	 * @return
 	 */
-	public String showcontactlist() {
-		return "showcontactlist() works";
+	public void showContactList() {
+		for (int i = 0; allcontacts.size() > i; i++) {
+			System.out.println(allcontacts.get(i).toString());
+		}
 	}// End of Showcontact
 
 	/**
@@ -37,7 +40,7 @@ public class ContactList {
 	 * This method will save contact list to a file on hard disk.
 	 */
 	public void save() {
-
+		// System.out.println(Contact.tostring);
 	}// End Save
 
 	/**
@@ -51,8 +54,7 @@ public class ContactList {
 	/**
 	 * This will return the list of contacts as a string.
 	 */
-	public String toString() {
-		return "toString() works";
-	}// End of toString
 
-}// End of class
+	
+
+}
