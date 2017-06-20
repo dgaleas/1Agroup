@@ -1,28 +1,45 @@
 
 /**
  * An object of this class is a contact containing info on ONE person, including
- * first name, last name, street address, phone number, and notes
+ * first name, last name, street address, phone number, and notes.
  * 
- * @author Donaldo
- *
  */
+import java.util.Scanner;
+
 public class Contact implements Comparable<Contact> {
+	public static char[] tostring;
 	private String firstname;
 	private String lastname;
 	private String streetaddress;
 	private String email;
-	private int phonenumber;
+	private String phonenumber;
 	private String notes;
+	{
+	}
 
 	/**
 	 * This will read input from user and create an object containing contact
 	 * info. This will include a first name, last name, street address, email,
 	 * phone number, and notes about the person.
 	 * 
-	 * @return
 	 */
 
 	public void readinput() {
+		Scanner console = new Scanner(System.in);
+		System.out.println("Enter Firstname: ");
+		Scanner scanner;
+		scanner = console;
+		setFirstname(scanner.nextLine());
+		System.out.println("Enter Lastname: ");
+		setLastname(scanner.nextLine());
+		System.out.println("Enter Streetaddress: ");
+		setStreetaddress(scanner.nextLine());
+		System.out.println("Enter email: ");
+		setEmail(scanner.nextLine());
+		System.out.println("Enter Phonenumber: ");
+		setPhonenumber(scanner.nextLine());
+		System.out.println("Enter Notes: ");
+		setNotes(scanner.nextLine());
 
 	}// End readinput
 
@@ -30,18 +47,111 @@ public class Contact implements Comparable<Contact> {
 	 * This method will return the object of this class as a string.
 	 */
 	public String toString() {
-		return "toString() works";
+		return lastname + ", " + firstname + "\n" + streetaddress + "\n" + email + "\n" + phonenumber + "\n" + "Notes:"
+				+ notes;
 
 	}// End of toString
 
 	/**
 	 * This method will compare the object contact to another that is received
-	 * from the user.
+	 * from the user. It is not being used for the current task, but is
+	 * important to the next task.
 	 */
 
 	public int compareTo(Contact o) {
 		return 0;
 
+	}
+
+	/**
+	 * Gets userInput and returns the inputed data.
+	 * 
+	 */
+	public String getFirstname() {
+
+		return firstname;
+	}
+
+	/**
+	 * Gets userInput and returns the inputed data.
+	 */
+	public void setFirstname(String firstname) {
+
+		this.firstname = firstname;
+	}
+
+	/**
+	 * Gets userInput and returns the inputed data
+	 */
+	public String getLastname() {
+		return lastname;
+	}
+
+	/**
+	 * Gets userInput and returns the inputed data.
+	 */
+	public void setLastname(String lastname) {
+
+		this.lastname = lastname;
+	}
+
+	/**
+	 * Gets userInput and returns the inputed data.
+	 */
+	public String getStreetaddress() {
+
+		return streetaddress;
+	}
+
+	/**
+	 * Gets userInput and returns the inputed data.
+	 */
+	public void setStreetaddress(String streetaddress) {
+
+		this.streetaddress = streetaddress;
+	}
+
+	/**
+	 * Gets userInput and returns the inputed data.
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * Refers to the input variable and does not return a value.
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	/**
+	 * Gets userInput and returns the inputed data.
+	 */
+	public String getPhonenumber() {
+
+		return phonenumber;
+	}
+
+	/**
+	 * Refers to the input variable and does not return a value.
+	 */
+	public void setPhonenumber(String phonenumber) {
+		this.phonenumber = phonenumber;
+	}
+
+	/**
+	 * Gets userInput and returns the inputed data.
+	 */
+	public String getNotes() {
+		return notes;
+	}
+
+	/**
+	 * Refers to the input variable and does not return a value.
+	 */
+	public void setNotes(String notes) {
+		this.notes = notes;
 	}
 
 }// End class
