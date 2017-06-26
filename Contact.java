@@ -14,10 +14,11 @@ public class Contact implements Comparable<Contact> {
 	private String phonenumber;
 	private String notes;
 
-	/**
-	 * This will read input from user and create an object containing contact
+        /**
+	 * This will read input from the user and create an object containing contact
 	 * info. This will include a first name, last name, street address, email,
-	 * phone number, and notes about the person.
+	 * phone number, and notes about the person. The user must enter a last name. 
+	 * If a last name is not entered, then the user will be prompted to enter it. 
 	 * 
 	 */
 
@@ -29,10 +30,12 @@ public class Contact implements Comparable<Contact> {
 		scanner = console;
 		setFirstname(scanner.nextLine());
 		System.out.println("Enter Last name: ");
-		
-		if (lastname != null ){
-			
-		setLastname(scanner.nextLine());		
+		String input = (scanner.nextLine());
+		while(input.length() == 0){
+			System.out.println("You must enter last name");
+			input = scanner.nextLine();
+		}
+		setLastname(input);
 		System.out.println("Enter Street address: ");
 		setStreetaddress(scanner.nextLine());
 		System.out.println("Enter email: ");
@@ -41,11 +44,8 @@ public class Contact implements Comparable<Contact> {
 		setPhonenumber(scanner.nextLine());
 		System.out.println("Enter Notes: ");
 		setNotes(scanner.nextLine());
-		}//end of if
-		else 
-			System.out.print("Your contact was not added, since it does not have a last name.");
-	}// End readinput
 
+	}// End readinput
 	/**
 	 * This method will return the object of this class as a string.
 	 */
