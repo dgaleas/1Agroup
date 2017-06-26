@@ -29,14 +29,33 @@ public class ContactList {
 	}// End of Showcontact
 
 	/**
+	 * This search will be in case insensitive. It will return a String of
+	 * contacts holding the chosen last name that the user inputs. It will tell
+	 * the user the number of contacts found. It will be in ascending order.
 	 * This method will return all contacts that match the last name inputed by
-	 * user.
+	 * the user.
 	 */
-
-	public String checkname() {
-		return "checkname() works";
-	}// End Checkname
-
+	//RJ
+	public void searchByLastName() {
+		Collections.sort(allcontacts);
+		System.out.print("Enter last name: ");
+		String lastname = scanner.nextLine();
+		String matchingLastname = "";
+		int occurrences = 0;
+		for (int i = 0; i < allcontacts.size(); i++) {
+			Contact contact = allcontacts.get(i);
+			if (lastname.equalsIgnoreCase(contact.getLastName())) {
+				matchingLastname += contact + "\n";
+				occurrences++;
+			}
+		}
+		if (matchingLastname.isEmpty()) {
+			System.out.println("No Contacts with that last name were found. \n");
+		} else {
+			System.out.println("=== " + occurrences + " Contacts Found! === \n\n" + matchingLastname);
+		}
+	}// End searchByLastName 
+	
 	/**
 	 * This method will save contact list to a file on hard disk.
 	 */
