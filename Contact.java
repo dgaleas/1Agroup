@@ -1,123 +1,116 @@
 
 /**
- * An object of this class is a contact containing info on ONE person, including
- * first name, last name, street address, phone number, and notes
+ * An instance of this class is a contact containing info on ONE person, including
+ * first name, last name, street address, phone number, and notes.
  * 
  */
 import java.io.Serializable;
 import java.util.Scanner;
 
 public class Contact implements Comparable<Contact>, Serializable {
-
 	private String firstname;
 	private String lastname;
 	private String streetaddress;
 	private String email;
 	private String phonenumber;
 	private String notes;
-	{
-	}
 
-	/**
-	 * This will read input from user and create an object containing contact
+        /**
+	 * This will read input from the user and create an object containing contact
 	 * info. This will include a first name, last name, street address, email,
-	 * phone number, and notes about the person.
+	 * phone number, and notes about the person. The user must enter a last name. 
+	 * If a last name is not entered, then the user will be prompted to enter it. 
+	 * 
 	 */
 
-	public void readinput() {
-		Scanner console = new Scanner(System.in);
-		Scanner scanner;
-		scanner = console;
+	public void readInput() {
+		System.out.println("Please enter the details below to create a new contact.");
+		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter First name: ");
 		setFirstname(scanner.nextLine());
 		System.out.println("Enter Last name: ");
-		setLastname(scanner.nextLine());
-/*	System.out.println("Enter Street address: ");
+		String input = (scanner.nextLine());
+		while(input.length() == 0){
+			System.out.println("You must enter last name");
+			input = scanner.nextLine();
+		}
+		setLastname(input);
+		System.out.println("Enter Street address: ");
 		setStreetaddress(scanner.nextLine());
 		System.out.println("Enter email: ");
 		setEmail(scanner.nextLine());
 		System.out.println("Enter Phone number: ");
 		setPhonenumber(scanner.nextLine());
 		System.out.println("Enter Notes: ");
-		setNotes(scanner.nextLine());*/
-
+		setNotes(scanner.nextLine());
 	}// End readinput
-
 	/**
 	 * This method will return the object of this class as a string.
 	 */
 	public String toString() {
-		return "Name: "+ lastname + ", " + firstname + "\n" + "Street address: "+ streetaddress + "\n"+ "Email: " + email + "\n"+ "Phone number: " + phonenumber + "\n" + "Notes:"
+		return lastname + ", " + firstname + "\n" + streetaddress + "\n" + email + "\n" + phonenumber + "\n" + "Notes:"
 				+ notes;
 
 	}// End of toString
 
 	/**
 	 * This method will compare the object contact to another that is received
-	 * from the user.
+	 * from the user. It will return a negative number if the first goes before
+	 * the other alphabetically.it will return a positive number if it goes
+	 * after, and 0 if they are the same.
 	 */
-
-	public int compareTo(Contact o) {
-		return 0;
-
+	@Override
+	public int compareTo(Contact secondcontact) {
+		return this.getlastname().compareTo(secondcontact.getlastname());
 	}
 
-	public String getFirstname() { // gets userInput and returns the inputed
-									// data
-		return firstname;
-	}
-
-	public void setFirstname(String firstname) {// gets userInput and returns
-												// the inputed data
-		this.firstname = firstname;
-	}
-
-	public String getLastname() {// gets userInput and returns the inputed data
+	public String getlastname() {
+		// TODO Auto-generated method stub
 		return lastname;
 	}
 
-	public void setLastname(String lastname) {// gets userInput and returns the
-												// inputed data
+	/**
+	 * Gets userInput and returns the inputed data.
+	 */
+	public void setFirstname(String firstname) {
+
+		this.firstname = firstname;
+	}
+
+	/**
+	 * Gets userInput and returns the inputed data.
+	 */
+	public void setLastname(String lastname) {
+
 		this.lastname = lastname;
 	}
 
-	public String getStreetaddress() {// gets userInput and returns the inputed
-										// data
-		return streetaddress;
-	}
+	/**
+	 * Gets userInput and returns the inputed data.
+	 */
+	public void setStreetaddress(String streetaddress) {
 
-	public void setStreetaddress(String streetaddress) {// gets userInput and
-														// returns the inputed
-														// data
 		this.streetaddress = streetaddress;
 	}
 
-	public String getEmail() {// gets userInput and returns the inputed data
-		return email;
-	}
-
-	public void setEmail(String email) { // refers to the input variable and
-											// does not return a value
+	/**
+	 * Refers to the input variable and does not return a value.
+	 */
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
-	public String getPhonenumber() {// gets userInput and returns the inputed
-									// data
-		return phonenumber;
-	}
-
-	public void setPhonenumber(String phonenumber) { // refers to the input
-														// variable and does not
-														// return a value
+	/**
+	 * Refers to the input variable and does not return a value.
+	 */
+	public void setPhonenumber(String phonenumber) {
 		this.phonenumber = phonenumber;
 	}
 
-	public String getNotes() { // gets userInput and returns the inputed data
-		return notes;
-	}
-
-	public void setNotes(String notes) { // refers to the input variable and
-											// does not return a value
+	/**
+	 * Refers to the input variable and does not return a value.
+	 */
+	public void setNotes(String notes) {
 		this.notes = notes;
 	}
 
