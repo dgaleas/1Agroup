@@ -15,22 +15,23 @@ public class Contact implements Comparable<Contact>, Serializable {
 	private String phonenumber;
 	private String notes;
 
-        /**
-	 * This will read input from the user and create an object containing contact
-	 * info. This will include a first name, last name, street address, email,
-	 * phone number, and notes about the person. The user must enter a last name. 
-	 * If a last name is not entered, then the user will be prompted to enter it. 
+	/**
+	 * This will read input from the user and create an object containing
+	 * contact info. This will include a first name, last name, street address,
+	 * email, phone number, and notes about the person. The user must enter a
+	 * last name. If a last name is not entered, then the user will be prompted
+	 * to enter it.
 	 * 
 	 */
 
-	public void readInput() {
+	public void readInput() {//JW
 		System.out.println("Please enter the details below to create a new contact.");
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter First name: ");
 		setFirstname(scanner.nextLine());
 		System.out.println("Enter Last name: ");
 		String input = (scanner.nextLine());
-		while(input.length() == 0){
+		while (input.length() == 0) {
 			System.out.println("You must enter last name");
 			input = scanner.nextLine();
 		}
@@ -44,10 +45,11 @@ public class Contact implements Comparable<Contact>, Serializable {
 		System.out.println("Enter Notes: ");
 		setNotes(scanner.nextLine());
 	}// End readinput
+
 	/**
 	 * This method will return the object of this class as a string.
 	 */
-	public String toString() {
+	public String toString() {//DG
 		return lastname + ", " + firstname + "\n" + streetaddress + "\n" + email + "\n" + phonenumber + "\n" + "Notes:"
 				+ notes;
 
@@ -60,13 +62,13 @@ public class Contact implements Comparable<Contact>, Serializable {
 	 * after, and 0 if they are the same.
 	 */
 	@Override
-	public int compareTo(Contact secondcontact) {
+	public int compareTo(Contact secondcontact) {//DG
 		return this.getlastname().compareTo(secondcontact.getlastname());
 	}
 
 	public String getlastname() {
 		// TODO Auto-generated method stub
-		return lastname;
+		return lastname.toUpperCase();
 	}
 
 	/**

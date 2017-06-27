@@ -8,31 +8,28 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 import java.io.*;
-public class ContactList implements Serializable{
+public class ContactList implements Serializable {
 	private ArrayList<Contact> allcontacts = new ArrayList<Contact>();
-	
-	public ArrayList<Contact> getArrayList(){
-		return allcontacts;
-	}
-	
-	
-	public void sort(){
+	/**
+	 * This will sort the contacts by last name. or first name if same
+	 */
+	public void sort() {//DG
 		Collections.sort(allcontacts);
-		
 	}
-
-	public void addContact(Contact con) {
+	/**
+	 * This will add the contact created to the list
+	 */
+	public void addContact(Contact con) {//DG
 		allcontacts.add(con);
 	}// end addcontact
 
 	/**
 	 * This will print entire list of contacts to console.
 	 */
-	public void showContactList() {
+	public void showContactList() {//DG
 		for (int i = 0; allcontacts.size() > i; i++) {
 			System.out.println(allcontacts.get(i).toString());
 		} // end of for
-		
 	}// End of Showcontact
 
 	/**
@@ -42,8 +39,8 @@ public class ContactList implements Serializable{
 	 * This method will return all contacts that match the last name inputed by
 	 * the user.
 	 */
-	//RJ
-	public void searchByLastName() {
+	// RJ
+	public void searchByLastName() {//RJ
 		Scanner scanner = new Scanner(System.in);
 		Collections.sort(allcontacts);
 		System.out.print("Enter last name: ");
@@ -62,55 +59,47 @@ public class ContactList implements Serializable{
 		} else {
 			System.out.println("=== " + occurrences + " Contacts Found! === \n\n" + matchingLastname);
 		}
-		
-	}// End searchByLastName 
-	
+	}// End searchByLastName
+
 	/**
 	 * This method will save contact list to a file on hard disk.
 	 */
-	public  void save()  {
+	public void save() {//JW
 		System.out.println("save method");
-		
-		try { //Catch errors in I/O if necessary.
-			FileOutputStream saveFile = new FileOutputStream("SaveObj.sav");//Open a file to write to, named SavedObj.sav.
+
+		try { // Catch errors in I/O if necessary.
+			FileOutputStream saveFile = new FileOutputStream("SaveObj.sav");// Open a file to write to, named SaveObj.sav.
 			System.out.print("1st");
-			ObjectOutputStream save = new ObjectOutputStream(saveFile);// Create an ObjectOutputStream to put objects into save file.
+			ObjectOutputStream save = new ObjectOutputStream(saveFile); //Create an ObjectOutputStream to put objects into save file.
 			System.out.print("2nd");
-			save.writeObject(allcontacts);//  Writes and saves the contacts to the file
+			save.writeObject(allcontacts);// Writes and saves the contacts to the file
 			System.out.print("3rd");
-			save.close();//closes the file and also saveFile.
+			save.close();// closes the file and also saveFile.
 			System.out.println("done writing");
-		}// end of try
+		} // end of try
 		catch (IOException e) {
 			System.out.println("exception = " + e.getMessage());
-		}// end catch
-		
-System.exit(0);
-}// End Save
-
+		} // end catch
+		System.exit(0);
+	}// End Save
 	/**
 	 * This method will open whatever file was saved when program runs.
 	 */
-
 	@SuppressWarnings("unchecked")
-	public   void    open()  {
+	public void open() {//JW
 		// Open file to read from, named SavedObj.sav.
-		ArrayList <Contact> allcontacts;
 		try {
 			FileInputStream fileIn = new FileInputStream("SaveObj.sav");
 			// Create an ObjectInputStream to get objects from save file.
 			ObjectInputStream in = new ObjectInputStream(fileIn);
-			allcontacts = (ArrayList <Contact>) in.readObject();
-			
+			allcontacts = (ArrayList<Contact>) in.readObject();
 			in.close(); // This also closes saveFile.
 		} catch (IOException e) {
-			System.out.println(e.getMessage());//if there was an error, print the info.
-		}catch (ClassNotFoundException e){
-		// Print the values, to see that they've been recovered.
-		System.out.println(e.getMessage());
+			System.out.println(e.getMessage());// if there was an error, print the info
+		} catch (ClassNotFoundException e) {
+			// Print the values, to see that they've been recovered.
+			System.out.println(e.getMessage());
 		}
-		
-		
-}// End of open
+	}// End of open
 
-}
+}//End of Contact
