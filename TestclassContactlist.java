@@ -1,4 +1,4 @@
-/**
+ln/**
  * This class will read input to act on creating,
  * modifying, printing, saving and starting
  * using the other two classes.*/
@@ -15,7 +15,9 @@ public class TestclassContactlist {
 		
 		Scanner in = new Scanner(System.in);
 		while (true ) {
-			System.out.print("Hello, please select");
+			System.out.println("Hello, please select one of the following: \n" +
+					  "  n - Create new Contact\n" + " p - Print Contacts\n" + "r - Search Contact by Last Name\n" + 
+					  " q - Quit the program");
 		String input= "a"  ;
 		input = in.nextLine();
 		switch (input.toLowerCase()) {
