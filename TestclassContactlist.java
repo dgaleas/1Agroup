@@ -15,9 +15,9 @@ public class TestclassContactlist {
 		
 		Scanner in = new Scanner(System.in);
 		while (true ) {
-			System.out.println("Hello, please select one of the following: \n" +
-					  "  n - Create new Contact\n" + " p - Print Contacts\n" + "r - Search Contact by Last Name\n" + 
-					  " q - Quit the program");
+			System.out.println("please select one of the following: \n" +
+					  "n - Create new Contact\n" + "p - Print Contact(s)\n" + "r - Search Contact by Last Name\n" + 
+					  "q - Quit the program");
 		String input= "a"  ;
 		input = in.nextLine();
 		switch (input.toLowerCase()) {
